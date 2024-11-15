@@ -10,7 +10,7 @@ import (
 	mirusort "github.com/mirumirumo/algo_go/sort"
 )
 
-func main() {
+func inputNums() []int {
 	sc := bufio.NewScanner(os.Stdin)
 	sc.Scan()
 	var nums []int
@@ -18,6 +18,11 @@ func main() {
 		num, _ := strconv.Atoi(num)
 		nums = append(nums, num)
 	}
+	return nums
+}
+
+func main() {
+	nums := inputNums()
 	mirusort.InsertionSort(nums)
 	fmt.Printf("%v\n", nums)
 }
